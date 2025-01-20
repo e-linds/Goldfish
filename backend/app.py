@@ -1,12 +1,15 @@
 #this app is to count how many days I'm in office per month
 
-from functions import add_new, add_to_db, check_monthly_numbers, print_attendance, check_ip, get_location
+from functions import add_new, add_to_db, check_monthly_numbers, print_attendance, check_ip, get_location, load_dotenv
+
+load_dotenv()
 
 input1 = input('''What would you like to do? 
                1: Check monthly office numbers. 
                2: Check another location. 
-               3: Add new location.
-               4: See entire database.
+               3: Add today to db.
+               4: Add new location.
+               5: See entire database.
                ''')
 
 if input1 == "1":
@@ -28,9 +31,12 @@ elif input1 == "2":
         print("That's not one of the options! Please try again")
 #still need to add in logic to send user back to question if they answer wrong
 
-elif input1 == 3:
-    print("still need to build this")
+elif input1 == "3":
+    add_to_db()
+
 elif input1 == "4":
+    print("still need to build this")
+elif input1 == "5":
     print_attendance()
 else:
     print("That's not one of the options, please try again!")

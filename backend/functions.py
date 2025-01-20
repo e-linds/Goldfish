@@ -3,6 +3,10 @@ from models import add_new
 import datetime
 import pprint
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 
 import sqlite3
 
